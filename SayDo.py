@@ -1,0 +1,15 @@
+import pyttsx3
+engine = pyttsx3.init()
+#engine.say('Привет мир')
+#engine.runAndWait()
+voices = engine.getProperty('voices')
+for voice in voices:
+    print('=======')
+    print('Имя: %s' % voice.name)
+    print('ID: %s' % voice.id)
+    print('Язык(и): %s' % voice.languages)
+    print('Пол: %s' % voice.gender)
+    print('Возраст: %s' % voice.age)
+engine.setProperty('voice', 'com.apple.speech.synthesis.voice.yuri')
+engine.say('Привет мир')
+engine.runAndWait()
